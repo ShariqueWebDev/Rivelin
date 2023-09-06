@@ -2,24 +2,27 @@ import React, { useState } from "react";
 import "./BannerSection.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/header-logo.png";
-import bannerImg from "../../assets/banner.png";
+import {BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill} from "react-icons/bs"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import {allProductsCategories} from "../../objData/products"
+import { Carousel } from "react-responsive-carousel";
 
 const BannerSection = () => {
-    const [readMore, setReadMore] = useState(false)
+  const [readMore, setReadMore] = useState(false);
 
-    // const observer = new IntersectionObserver((entries)=>{
-    //     entries.forEach((entry)=>{
-    //         if(entry.isIntersecting){
-    //             entry.target.classList.add("show");
-    //         }
-    //         else{
-    //             entry.target.classList.remove("show")
-    //         }
-    //     })
-    // })
-    
-    // const hiddenElement = document.querySelectorAll(".summary_text");
-    // hiddenElement.forEach((e)=>observer.observe(e));
+  // const observer = new IntersectionObserver((entries)=>{
+  //     entries.forEach((entry)=>{
+  //         if(entry.isIntersecting){
+  //             entry.target.classList.add("show");
+  //         }
+  //         else{
+  //             entry.target.classList.remove("show")
+  //         }
+  //     })
+  // })
+
+  // const hiddenElement = document.querySelectorAll(".summary_text");
+  // hiddenElement.forEach((e)=>observer.observe(e));
 
   return (
     <ContentWrapper>
@@ -44,7 +47,11 @@ const BannerSection = () => {
             <br />
             <br />
           </p>
-          <div className={`more_content ${readMore? "active_read":"deactive_read"}`}>
+          <div
+            className={`more_content ${
+              readMore ? "active_read" : "deactive_read"
+            }`}
+          >
             Our vision is to be A One-Stop-Shop for everyone setting up new
             hotels and restaurants, anyone streamlining processes in hotels and
             for those contemplating a makeover of existing hotels and
@@ -52,10 +59,43 @@ const BannerSection = () => {
             hotel and guestroom properties, including essential toiletries,
             amenities and furniture all designed with hospitality in mind.
           </div>
-          <button className="read_btn" onClick={()=>{setReadMore(!readMore)}}>{readMore?"Hide Text":"Read More"}</button>
+          <button
+            className="read_btn"
+            onClick={() => {
+              setReadMore(!readMore);
+            }}
+          >
+            {readMore ? "Hide Text" : "Read More"}
+          </button>
         </div>
         <div className="banner_img">
-          <img src={bannerImg} alt="" />
+          <Carousel
+           autoPlay={true}
+           infiniteLoop={true}
+           showThumbs={false}
+           showIndicators={false}
+           showStatus={false}
+           renderArrowPrev={(handlerClick, hasPrev) => (
+             <div className="carousel_button_left " onClick={handlerClick}>
+               <BsFillArrowLeftCircleFill  className="text-[22px] max-md:text-[13px]  " />
+             </div>
+           )}
+           renderArrowNext={(handlerClick, hasNex) => (
+             <div className="carousel_button_right" onClick={handlerClick}>
+               <BsFillArrowRightCircleFill className="rotate-180 text-[22px] max-md:text-[13px]"  />
+             </div>
+           )}>
+          
+            {
+              allProductsCategories.map((image)=>{
+                return (
+                  <div className="image_container" >
+                    <img src={image.img} key={image.id}></img>
+                  </div>
+                )
+              })
+            }
+          </Carousel>
         </div>
       </div>
     </ContentWrapper>

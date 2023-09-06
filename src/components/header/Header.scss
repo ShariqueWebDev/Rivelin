@@ -1,13 +1,12 @@
 @import "../../config.scss/mixins.scss";
 
 .header_container{
-    border: 1px solid black;
     background-color: #262626;
     padding: 5px;
     transition: all 0.5s ease;
     width: 100%;
     position: fixed;
-    z-index: 99;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 3px 6px, rgba(255, 255, 255, 0.1) 0px 3px 6px;    z-index: 100;
     
     &.active{
         transform: translateY(0);
@@ -18,6 +17,8 @@
     header{
         display: flex;
         align-items: center;
+        background-color: #262626;
+
         .logo{
             width: 60px;
             height: 50px;

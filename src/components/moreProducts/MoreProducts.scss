@@ -3,7 +3,8 @@
     padding: 100px 10px;
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    background-image: linear-gradient(110deg, #333432, #202020);
+
     @include md{
         flex-direction: column;
         justify-content: center;

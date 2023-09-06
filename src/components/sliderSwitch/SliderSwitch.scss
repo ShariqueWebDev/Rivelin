@@ -1,8 +1,9 @@
 @import "../../config.scss/mixins.scss";
 
 .slider_switch {
-  padding: 120px 10px 0 10px;
-  background-color: white;
+  padding: 100px 10px 10px 10px;
+  background-image: linear-gradient(110deg, #333432, #202020);
+  color: white;
     .heading{
         font-size: 40px;
         font-weight: 600;
@@ -37,7 +38,8 @@
       align-items: center;
       border-radius: 10px;
       text-align: center;
-      
+      transition: all 0.5s ease;
+            
       &.active {
           color: white;
           background-color: #cb3359;
