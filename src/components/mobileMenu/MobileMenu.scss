@@ -1,0 +1,46 @@
+@import "../../config.scss/mixins.scss";
+.mobile_menu_container{
+    display: none;
+
+    @include md {
+        background-color: #333432;
+        position: fixed;
+        top: 58px;
+        width: 100%;
+        transform: translateY(-130%);
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        font-weight: 500;
+        padding: 10px ;
+        padding-bottom: 6px;
+        color: white;
+        transition: all 0.3s ease;
+        z-index: 5;
+    }
+    li{
+        list-style: none;
+    }
+    
+    .submenu{
+        margin-top: 10px;
+        margin-left: 10px;
+        transform: translateX(-200%);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        height: 0;
+        li{
+            list-style: none;
+            margin: 20px 0;
+        }
+        &.active{
+            transform: translateX(0);
+            height: 100%;
+        }
+    }
+    &.active{
+        transition: all 0.3s ease;
+        transform: translateY(0);
+    }
+}

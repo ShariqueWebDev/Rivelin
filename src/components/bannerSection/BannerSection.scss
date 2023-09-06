@@ -1,0 +1,126 @@
+@import "../../config.scss/mixins.scss";
+.main_container{
+    padding-top: 130px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    // background-image: linear-gradient(110deg, #333432, #202020);
+    background-color: white;
+    @include md {
+        padding: 100px 15px;
+    }
+    .intro{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 0;
+        border-radius: 20px;
+        background-image: linear-gradient(180deg, white, rgb(197, 195, 195));
+        
+        @include md{
+            flex-wrap: wrap;
+        }
+        .logo{
+            @include md {
+                max-width: 300px;
+                
+            }
+            img{
+                @include md {
+                    width: 100%;
+                }
+            }
+            
+        }
+        .text{
+            @include md {
+                // font-size: 35px;
+                margin-bottom: 10px;
+            }
+            h1{
+                color: #202020;
+                font-size: 55px;
+                @include md {
+                    font-size: 35px;
+                }
+            }
+            p{
+                font-size: 20px;
+                color: #bba009;
+                // font-style: italic;
+                font-weight: 500;
+                @include md {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .summary_text{
+        text-align: center;
+        width: 100%;
+        font-weight: 500;
+        font-style: italic;
+        padding-top: 100px 0;
+        font-size: 19px;
+        h1{
+            color: #202020;
+            font-style: normal;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            @include md {
+                font-size: 25px;
+            }
+        }
+        p{
+            color: rgb(82, 79, 79);
+            @include md {
+                font-size: 17px;
+            }
+        }
+        .more_content{
+            font-size: 19px;
+            color: rgb(82, 79, 79);
+            // height: 0px;
+            transform: translateX(-300px);
+            transition: all 0.5s ease;
+            overflow: hidden;
+            @include md{
+                font-size: 17px;
+                
+            }
+            &.active_read{
+                transform: translateX(0);
+            }
+            &.deactive_read{
+                // transition: all 0.3s ease;
+                height: 0;
+            }
+        }
+        .read_btn{
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 16px;
+            outline: none;
+            border: none;
+            background-color: #cb3359;
+            color: white;
+        }
+   
+    }
+    .banner_img{
+        max-width:1180px ;
+        margin-top: 50px;
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        @include md{
+            margin-top: 30px;
+        }
+        img{
+            width: 100%;
+            border-radius: 20px;
+        }
+    }
+}

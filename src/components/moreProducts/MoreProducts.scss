@@ -1,0 +1,13 @@
+@import "../../config.scss/mixins.scss";
+.more_products_container{
+    padding: 100px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    @include md{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+  
+}

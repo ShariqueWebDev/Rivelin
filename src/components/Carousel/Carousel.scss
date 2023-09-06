@@ -1,0 +1,43 @@
+@import "../../config.scss/mixins.scss";
+
+.carousel_container{
+    .navigator{
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        .carouselLeftNav{
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            @include md {
+                display: none;
+            }
+            &:hover{
+                color: rgb(32, 31, 31);
+                transform: scale(1.1);
+            }
+        }
+        .carouselRightNav{
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            @include md {
+                display: none;
+            }
+            &:hover{
+                color: rgb(32, 31, 31);
+                transform: scale(1.1);
+
+            }
+        }
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }    
+    .carousel_content{
+        display: flex;
+        gap: 35px;
+        overflow-x: scroll;
+        @include md{
+            gap: 15px;
+        }
+    }
+}

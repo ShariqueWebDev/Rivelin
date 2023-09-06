@@ -1,0 +1,23 @@
+@import "../../config.scss/mixins.scss";
+
+.all_products{
+    // border: 1px solid black;
+    background-color: white;
+    padding: 30px 15px 20px 15px;
+    // background-image: linear-gradient(210deg, #bba009, rgb(219, 215, 215));
+
+    .contents{
+        .main_heading{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            h2{
+                font-size: 40px;
+                @include md{
+                    font-size: 28px;
+                }
+            }
+            
+        }
+    }
+}

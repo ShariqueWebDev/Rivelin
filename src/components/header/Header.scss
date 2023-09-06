@@ -1,0 +1,86 @@
+@import "../../config.scss/mixins.scss";
+
+.header_container{
+    border: 1px solid black;
+    background-color: #262626;
+    padding: 5px;
+    transition: all 0.5s ease;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    
+    &.active{
+        transform: translateY(0);
+    }
+    &.active_reset{
+        transform: translateY(-100px);
+    }
+    header{
+        display: flex;
+        align-items: center;
+        .logo{
+            width: 60px;
+            height: 50px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .menu_container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            
+            .header_menu{
+                display: flex;
+                gap: 30px;
+                @include md{
+                    display: none;
+                }
+                li{
+                    list-style: none;
+                    font-size: 17px;
+                    color: white;
+                    cursor: pointer;
+                    padding: 5px;
+                    border-radius: 5px;
+                    backdrop-filter: blur(3.5px);
+                    -webkit-backdrop-filter: blur(3.5px);
+                    transition: all 0.2s ease-in;
+                    position: relative;
+                    .submenu_ul{
+                        position: absolute;
+                        display: flex;
+                        gap: 20px;
+                        flex-direction: column;
+                        top: 32px;
+                        left: 0;
+                        background-color: #262626;
+                        width: 200px;
+                        padding:  20px 10px;
+                        border-radius: 5px;
+                        li{
+                            width: 100%;
+                            color: white;
+                            // border: 1px solid black;
+                            // padding: 0;
+
+                        }
+                    }
+                }
+                li:hover{
+                    color: #FFD700;
+                    background-color: rgba(255, 255, 255, 0.2);
+
+                }
+            }
+        }
+        .hamburger_menu{
+            color: white;
+            display: none;
+            @include md{
+                display: block;
+            }
+        }
+    }
+}
