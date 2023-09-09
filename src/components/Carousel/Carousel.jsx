@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Carousel.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import ProductCard from "../productCard/ProductCard";
@@ -8,7 +8,13 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 
+import Aos from "aos";
+import "aos/dist/aos.css"
+
 const Carousel = ({data}) => {
+  useEffect(()=>{
+    Aos.init({duration:1500})
+  },[])
 
   const carouselContainer = useRef();
 
@@ -27,7 +33,7 @@ const Carousel = ({data}) => {
 
   return (
     <ContentWrapper>
-      <div className="carousel_container">
+      <div className="carousel_container" data-aos="fade-up">
       <div className="navigator">
        <BsFillArrowLeftCircleFill className="carouselLeftNav arrow" style={{cursor:"pointer"}} size={35} onClick={()=>{navigationCarousel("left")}}/>
         <BsFillArrowRightCircleFill className="carouselRightNav arrow" style={{cursor:"pointer"}} size={35} onClick={()=>{navigationCarousel("right")}}/>

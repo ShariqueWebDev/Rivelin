@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./BannerSection.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/header-logo.png";
@@ -6,10 +6,16 @@ import {BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill} from "react-icons
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {allProductsCategories} from "../../objData/products"
 import { Carousel } from "react-responsive-carousel";
+import Aos from "aos";
+import "aos/dist/aos.css"
+
 
 const BannerSection = () => {
   const [readMore, setReadMore] = useState(false);
-
+  
+  useEffect(()=>{
+    Aos.init({duration:1500})
+  }, [])
   // const observer = new IntersectionObserver((entries)=>{
   //     entries.forEach((entry)=>{
   //         if(entry.isIntersecting){
@@ -26,8 +32,8 @@ const BannerSection = () => {
 
   return (
     <ContentWrapper>
-      <div className="main_container">
-      <div className="banner_img">
+      <div className="main_container" >
+      <div className="banner_img" data-aos = "fade-up">
           <Carousel
            autoPlay={true}
            infiniteLoop={true}
@@ -43,7 +49,7 @@ const BannerSection = () => {
              <div className="carousel_button_right" onClick={handlerClick}>
                <BsFillArrowRightCircleFill className="rotate-180 text-[22px] max-md:text-[13px]"  />
              </div>
-           )}>
+           )} >
           
             {
               allProductsCategories.map((image)=>{
@@ -56,7 +62,7 @@ const BannerSection = () => {
             }
           </Carousel>
         </div>
-        <div className="summary_text">
+        <div className="summary_text" data-aos = "fade-up">
           <h1>WELCOME TO Rivelin TRADING</h1>
           <p>
             Rivelin General Trading has been established with the intent of
@@ -86,7 +92,7 @@ const BannerSection = () => {
             {readMore ? "Hide Text" : "Read More"}
           </button>
         </div>
-        <div className="intro">
+        <div className="intro" data-aos = "fade-up">
           <div className="logo">
             <img src={logo} alt="" />
           </div>

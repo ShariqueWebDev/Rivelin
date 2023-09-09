@@ -13,6 +13,8 @@ const SliderSwitch = ({switchData, fetchTabData}) => {
 
         }
     }
+
+    
   return (
     <div className='slider_switch'>
         <div className="heading">
