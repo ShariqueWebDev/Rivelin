@@ -13,7 +13,7 @@ import "aos/dist/aos.css"
 
 const Carousel = ({data}) => {
   useEffect(()=>{
-    Aos.init({duration:1500})
+    Aos.init({duration:2000})
   },[])
 
   const carouselContainer = useRef();

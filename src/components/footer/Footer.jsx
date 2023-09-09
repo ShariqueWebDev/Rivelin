@@ -1,18 +1,27 @@
+import Aos from "aos";
 import "./Footer.scss";
 import { FaLocationArrow, FaPhone, FaEnvelope } from "react-icons/fa";
+import "aos/dist/aos.css"
+import { useEffect } from "react";
+
 const Footer = () => {
+
+    useEffect(()=>{
+        Aos.init({duration:2000})
+    },[])
+
     return (
         <footer>
-            <div className="footer">
+            <div className="footer" data-aos="fade-up">
                 <div className="footer-content">
                     <div className="col">
-                        <div className="title">About</div>
+                        <div className="title" data-aos="fade-right">About</div>
                         <div className="text">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt autem nihil temporibus accusantium. Doloremque, unde cum omnis ducimus at voluptatibus, dicta vero fugiat vitae.
                         </div>
                     </div>
-                    <div className="col">
-                        <div className="title">Contact</div>
+                    <div className="col" data-aos="fade-right">
+                        <div className="title" data-aos="fade-right">Contact</div>
                         <div className="c-item">
                            
                             <div className="text"><FaLocationArrow /> 10130 Huebner Rd, San Antonio, Texas, 78240, United States</div>
@@ -27,8 +36,8 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="col">
-                        <div className="title">Products</div>
-                        <div className="text">
+                        <div className="title" data-aos="fade-right">Products</div>
+                        <div className="text" data-aos="fade-right">
                             <span>Linen</span>
                             <span>Kitchen Equipments</span>
                             <span>Fire Safety</span>
@@ -37,9 +46,9 @@ const Footer = () => {
                             <span>House Keeping</span>
                         </div>
                     </div>
-                    <div className="col">
+                    <div className="col" data-aos="fade-right">
                         <div className="title">Pages</div>
-                        <div className="text">
+                        <div className="text" data-aos="fade-right">
                             <span>Home</span>
                             <span>About</span>
                             <span>Privacy Policy</span>

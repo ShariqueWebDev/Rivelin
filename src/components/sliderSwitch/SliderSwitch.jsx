@@ -10,12 +10,10 @@ const SliderSwitch = ({switchData, fetchTabData}) => {
         if(tab){
             setSelectedTab(index)
             fetchTabData(tab, index)
-
         }
     }
 
-    
-  return (
+    return (
     <div className='slider_switch'>
         <div className="heading">
             <div>

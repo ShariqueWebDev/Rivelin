@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ProductCard.scss";
 import Loader from "../loader/Loader";
 
 
 const ProductCard = ({ data, loader }) => {
-
-  useEffect(()=>{
-  },[])
 
   return (
     <>

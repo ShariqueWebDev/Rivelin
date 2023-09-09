@@ -22,7 +22,7 @@ const MoreProducts = () => {
 
     useEffect(()=>{
         window.scrollTo(0, 0)
-        Aos.init({duration:1500})
+        Aos.init({duration:2000})
       },[endpoints, location])
 
       setTimeout(() => {

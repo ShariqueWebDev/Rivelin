@@ -14,7 +14,7 @@ const BannerSection = () => {
   const [readMore, setReadMore] = useState(false);
   
   useEffect(()=>{
-    Aos.init({duration:1500})
+    Aos.init({duration:2000})
   }, [])
   // const observer = new IntersectionObserver((entries)=>{
   //     entries.forEach((entry)=>{
