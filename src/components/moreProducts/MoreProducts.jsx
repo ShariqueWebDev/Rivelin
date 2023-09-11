@@ -16,6 +16,15 @@ import "aos/dist/aos.css"
 
 const MoreProducts = () => {
 
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(()=>{
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3000);
+  },[])
+
     const [endpoints, setEndpoints] = useState(allProducts)
     const location = useLocation()
     const [loader,setLoader] = useState(true)
@@ -65,7 +74,7 @@ const MoreProducts = () => {
 
   return (
     <ContentWrapper>
-        <div className="slider_tab" data-aos="fade-up" >
+       <div className="slider_tab" data-aos="fade-up" >
           <SliderSwitch switchData = {["All Product", "Kitchen Equipment", "Linen Fabrics"]} fetchTabData={fetchTabData} loader={loader} setLoader={setLoader} />
         </div>
         {loader && <Loader/>}
